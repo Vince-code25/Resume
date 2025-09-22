@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vince Jason Haya - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .title {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-icon {
+            font-size: 1.2em;
+            width: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 0;
+            min-height: 600px;
+        }
+
+        .left-section {
+            padding: 40px;
+            background: white;
+        }
+
+        .right-section {
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px 30px;
+            border-left: 1px solid #dee2e6;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            border-radius: 2px;
+        }
+
+        .objective-text {
+            font-size: 1.1em;
+            color: #34495e;
+            line-height: 1.8;
+            text-align: justify;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 500;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+
+        .school-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .degree {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .date-range {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .personal-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-item {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 3px solid #3498db;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9em;
+        }
+
+        .info-value {
+            color: #34495e;
+            font-size: 0.95em;
+        }
+
+        .reference-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #27ae60;
+        }
+
+        .reference-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .reference-position {
+            color: #27ae60;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .reference-contact {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+
+        .no-experience {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px dashed #dee2e6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .right-section {
+                border-left: none;
+                border-top: 1px solid #dee2e6;
+            }
+
+            .left-section, .right-section {
+                padding: 30px 20px;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .personal-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+                background: white;
+            }
+
+            .header {
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .skill-item {
+                background: #3498db !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <img src="a39a5a31-0685-4c48-b16c-235615f3dff2.jpg" alt="Vince Jason Haya" class="profile-photo">
+            <h1>Vince Jason Haya</h1>
+            <div class="title">UI/UX Enthusiast</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>vyoshida.02@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span>09457509029</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>Blk 9G LOT 12 Phase 3C Tanigue Street, Brgy. 20 Caloocan City</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="left-section">
+                <section class="section">
+                    <h2 class="section-title">Objective</h2>
+                    <div class="objective-text">
+                        Seeking opportunities for job application where I can utilize my passion for UI/UX design and contribute to creating exceptional user experiences. Eager to apply my skills in a dynamic work environment while continuing to learn and grow professionally.
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Educational Background</h2>
+                    
+                    <h3 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">Secondary Education</h3>
+                    
+                    <div class="education-item">
+                        <div class="school-name">Tondo High School</div>
+                        <div class="degree">Science, Technology, Engineering, and Mathematics</div>
+                        <div class="date-range">2021 – 2023</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="school-name">Corinthian School of Valenzuela</div>
+                        <div class="degree">High School Diploma</div>
+                        <div class="date-range">2015 – 2018</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="school-name">Tisa National High School</div>
+                        <div class="degree">High School</div>
+                        <div class="date-range">2014 – 2015</div>
+                    </div>
+
+                    <h3 style="color: #2c3e50; margin: 25px 0 15px 0; font-size: 1.2em;">Primary Education</h3>
+
+                    <div class="education-item">
+                        <div class="school-name">Nug-As, Alcoy Elementary School</div>
+                        <div class="degree">Elementary Diploma</div>
+                        <div class="date-range">2011 – 2014</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="school-name">Unisan Central Elementary School</div>
+                        <div class="degree">Elementary</div>
+                        <div class="date-range">2009 – 2010</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="school-name">Sta. Quitera Elementary School</div>
+                        <div class="degree">Elementary</div>
+                        <div class="date-range">2006 – 2008</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Working Experience</h2>
+                    <div class="no-experience">
+                        No professional work experience yet. Eager to start my career and gain valuable experience in the field.
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Certificates & Awards</h2>
+                    <div class="no-experience">
+                        No certificates or awards to display at this time. Looking forward to earning recognition through future achievements.
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-section">
+                <section class="section">
+                    <h2 class="section-title">UI/UX Skills</h2>
+                    <div class="skills-container">
+                        <div class="skill-item">User Interface Design</div>
+                        <div class="skill-item">User Experience Research</div>
+                        <div class="skill-item">Wireframing & Prototyping</div>
+                        <div class="skill-item">Visual Design Principles</div>
+                        <div class="skill-item">Usability Testing</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Personal Information</h2>
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <div class="info-label">Birthday</div>
+                            <div class="info-value">May 17, 2000</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Age</div>
+                            <div class="info-value">25 years old</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Religion</div>
+                            <div class="info-value">Catholic</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Height</div>
+                            <div class="info-value">5'8"</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Weight</div>
+                            <div class="info-value">92 kg</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Nickname</div>
+                            <div class="info-value">Vinsoy</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Nationality</div>
+                            <div class="info-value">Filipino</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Character References</h2>
+                    
+                    <div class="reference-item">
+                        <div class="reference-name">Alicia De Leon</div>
+                        <div class="reference-position">Owner, Alice Ubod Stall</div>
+                        <div class="reference-contact">📱 09759236428</div>
+                    </div>
+
+                    <div class="reference-item">
+                        <div class="reference-name">Zharmaine Martinez</div>
+                        <div class="reference-position">Operational Manager, Alice Ubod Stall</div>
+                        <div class="reference-contact">📱 09951662980</div>
+                    </div>
+
+                    <div class="reference-item">
+                        <div class="reference-name">Paul David Mendoza</div>
+                        <div class="reference-position">Philippine National Police (PNP)</div>
+                        <div class="reference-contact">📱 09369622800</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
